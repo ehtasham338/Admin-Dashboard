@@ -1,0 +1,1199 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashbaord</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="admin.css">
+
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body >
+
+   
+    <!--Nvabar-->
+
+    <nav class="navbar bg-white border-0 px-3 custom-navbarg fixed-top">
+      <div class="container-fluid px-0 d-flex align-items-center justify-content-between gap-2">
+        <span class="fw-semibold navbar-title">
+    Dashboard
+</span>
+
+   <button class="btn nav-btn px-3 py-1">
+  Dashboard
+</button>
+
+        <div class="d-flex align-items-center gap-2">
+          <div class="text-end">
+            <div class="fw-medium">Ehtasham</div>
+            <small class="text-muted">Admin</small>
+          </div>
+
+          <img
+            src="Images/navbaricon/Profile-icon.svg"
+            alt="logo"
+            width="45"
+            height="45"
+            class="rounded"
+          />
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!--- SIDEBAR  -->
+    <div class="side " >
+    <nav
+      id="sidebar"
+      class="bg-dark text-white position-fixed bottom-0 top-0 overflow-scroll d-flex flex-column  rounded-3"
+    >
+      <!-- LOGO -->
+      <div class="d-flex align-items-center p-3 border-bottom border-secondary">
+        <div
+          class="bg-dark d-flex align-items-center justify-content-center rounded"
+           >
+          <img src="/Images/Logo.svg" width="22px" height="24px" />
+        </div>
+        <span class="ms-2 fw-semibold logo-text">Alertify</span>
+      </div>
+
+      <!-- APP LABEL -->
+      <div class="sidebar-app-label px-3 py-2 large text-white">
+        ShopEase App
+      </div>
+
+      <!-- MENU -->
+      <div>
+        <!-- DASHBOARD -->
+       <a href="index.html" class="d-flex align-items-center text-decoration-none px-3">
+    <img src="/Images/Dashboard-Icon.svg" width="40" height="40" />
+
+    <span class="nav-label">Dashboard</span>
+</a>
+
+        <!-- MESSAGES -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'messages-sub')"
+          >
+            <!-- <img src="/Images/Message-Icon.svg" width="50" height="50" class="me-2"> -->
+            <svg class="sidebar-icon" >
+              <use href="./Images/Message-Icon.svg#message-icon"></use>
+            </svg>
+
+            <span class="nav-label">Messages</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="messages-sub">
+            <li  class="active">
+              <a
+                class=" text-decoration-none active"
+                href="create.html">Push
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Web</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Email</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >SMS</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >in-App</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Template</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- AUDIENCE -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'audience-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Audinace-icon.svg#Audinace"></use>
+            </svg>
+
+            <span class="nav-label">Audience</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="audience-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Segments</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Subscrption</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Test Subscrptions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- DELIVERY -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'delivery-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Delivery-icon.svg#Delivery"></use>
+            </svg>
+
+            <span class="nav-label">Delivery</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="delivery-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Scheduled Message</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Sent meassage</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'settings-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Setting-icon.svg#Setting-icon"></use>
+            </svg>
+
+            <span class="nav-label">Settings</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="settings-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Platforms</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Role $ permission</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >User</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <!-- BOTTOM -->
+
+      <div class="border-top border-secondary p-2 mt-auto ">
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-2 py-2"
+            onclick="toggleMenu(event, 'organization-sub')"
+          >
+            <img class="sidebar-icon"
+              src="/Images/Oragnizatio-icon.svg#Oragnizatio-icon"
+              
+              
+            />
+
+            <span class="nav-label">Organizations</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="organization-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >All Organization</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Media</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Social Media</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Partners</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-2 py-2"
+            onclick="toggleMenu(event, 'apps-sub')"
+          >
+            <img class="sidebar-icon"
+              src="/Images/NaApps-icon.svg"
+              
+              
+            />
+
+            <span class="nav-label">Apps</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="apps-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >TikTok</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Facebook</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    </div>
+
+
+
+   <div id="contentArea"></div>
+
+
+    <div class="wrapper">
+
+
+      <div class="main-content">
+      <!-- Graph and card -->
+      
+       <div class="cardgarph">
+  <div class="row g-2 align-items-stretch">
+
+    <!-- CARD 1 -->
+    <div class="col-6 col-sm-4 col-md-2 d-flex">
+      <div class="card dash-card d-flex flex-column p-2 w-100">
+        <div class="icon-boxcard bg-primary bg-opacity-10 text-primary mb-3 mt-1">
+          <img src="/Images/cardicon/card1-icon.svg" alt="sads">
+        </div>
+        <h4 class="card-title-value text-primary mb-1">320K</h4>
+        <p class="text-dark small mb-2">Total Subscribers</p>
+        <div class="mt-auto">
+          <span class="badge bg-success bg-opacity-10 text-dark text-muted">
+            ↑ 2.1%
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="col-6 col-sm-4 col-md-2 d-flex">
+      <div class="card dash-card d-flex flex-column p-2 w-100">
+        <div class="icon-boxcard bg-success bg-opacity-10 text-success mb-3 mt-1">
+          <img src="./Images/cardicon/card2-icon.svg" alt=" icon">
+        </div>
+        <h4 class="card-title-value mb-1 text-success ">320K</h4>
+        <p class="text-dark small mb-2">Active Subscribers</p>
+        <div class="mt-auto">
+          <span class="badge bg-danger bg-opacity-10 text-dark text-muted">
+            ↑ 2.1%
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="col-6 col-sm-4 col-md-2 d-flex">
+      <div class="card dash-card d-flex flex-column p-2 w-100">
+        <div class="icon-boxcard bg-danger bg-opacity-10 text-danger mb-3 mt-1">
+          <img src="/Images/cardicon/card3-icon.svg" alt=" icon2">
+        </div>
+        <h4 class="card-title-value text-danger mb-1">320K</h4>
+        <p class="text-dark small mb-2">Total Unsubscribers</p>
+        <div class="mt-auto">
+          <span class="badge bg-warning bg-opacity-10 text-dark text-muted">
+            ↑ 2.1%
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAPH CARD -->
+    <div class="col-12 col-sm-12 col-md-6 d-flex">
+      <div class="card dash-card card-custom p-2 d-flex flex-column w-100">
+        <div class="text-center mb-2">
+          <h6 class="fw-semibold m-0">Engagement Rate</h6>
+        </div>
+        <div class="row g-0 flex-grow-1 align-items-center">
+          <div class="col-5 chart-box">
+            <div id="engagementChart" ></div>
+          </div>
+
+
+
+<div class="col-7 small px-0 pe-2">
+
+    <div class="d-flex align-items-center gap-3 mb-1">
+        <span class="label-boxgraph">
+            <span class="linegraph bg-primary"></span>
+           Push
+        </span>
+        <b class="percentage">40%</b>
+    </div>
+
+    <div class="d-flex align-items-center gap-3 mb-1">
+        <span class="label-boxgraph">
+            <span class="linegraph bg-success"></span>
+            Email
+        </span>
+        <b class="percentage">30%</b>
+    </div>
+
+    <div class="d-flex align-items-center gap-3 mb-1">
+        <span class="label-boxgraph">
+            <span class="linegraph bg-warning"></span>
+            SMS
+        </span>
+        <b class="percentage">20%</b>
+    </div>
+
+    <div class="d-flex align-items-center gap-3 mb-1">
+        <span class="label-boxgraph">
+            <span class="linegraph bg-primary"></span>
+            Web
+        </span>
+        <b class="percentage">15%</b>
+    </div>
+
+    <div class="d-flex align-items-center gap-3 mb-1">
+        <span class="label-boxgraph">
+            <span class="linegraph bg-info"></span>
+            In-App
+        </span>
+        <b class="percentage">25%</b>
+    </div>
+
+</div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+      
+
+      <!-- Timeline -->
+
+      <div class="  custom-left mt-2 ">
+        <div class="row g-2">
+          <!--  LEFT CARD  -->
+          <div class="col-12 col-md-6  ">
+            <div class="card shadow-sm border-0 h-100 p-3 rounded-4">
+              <h6 class="fw-bold mb-3">Today Activities</h6>
+
+              <div class="timeline">
+                <!-- ITEM -->
+                <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+              
+
+
+       <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+                <!-- ITEM -->
+               <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+                <!-- ITEM -->
+
+                 <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+                <!-- ITEM -->
+
+                  <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+     <div class="timeline-marker">
+   <img src="/Images/Ellipse 37.svg " alt="step icon">
+</div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+                <!-- ITEM -->
+
+               <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+                <!-- ITEM -->
+
+                 <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+                <!-- ITEM -->
+
+                  <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+                <!-- ITEM -->
+
+                <div class="timeline-item d-flex mb-3">
+
+      <!-- TIME -->
+      <div class="time text-dark small">
+        08:42
+      </div>
+
+      <!-- DOT + LINE -->
+      <div class="timeline-marker">
+        <img src="/Images/Ellipse 37.svg " alt="step icon">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-grow-1">
+        <div class="fw-semibold small">Brian Cox</div>
+        <div class="text-muted small">Created a new Contract</div>
+      </div>
+
+      <!-- BADGE -->
+      <div class="ms-auto">
+        <span class="badge  bg-opacity-10 text-primary small">
+          Administrator
+        </span>
+      </div>
+
+    </div>
+
+                <!-- ITEM -->
+                
+
+              </div>
+            </div>
+          </div>
+
+          <!--  RIGHT CARD  -->
+          <div class="col-12 col-md-6">
+            <div class="card shadow-sm border-0 h-100 p-3 rounded-4 ">
+              <h6 class="fw-bold mb-3">Contracts Added Today</h6>
+
+              <!-- ITEM -->
+              <div
+                class="d-flex align-items-center justify-content-between py-2 "
+              >
+               <div class="d-flex align-items-center gap-3">
+  
+  <div class="icon-box-contract d-flex align-items-center justify-content-center custom-bordericon color-1 ">
+      <img src="Images/Mc.svg" alt="">
+  </div>
+
+  <div>
+    <div class="fw-semibold small">Checkout</div>
+    <div class="text-muted small">Contract ID:ABC12345</div>
+  </div>
+
+</div>
+
+                <span class="badge bg-success bg-opacity-10 text-success small">
+                  Published
+                </span>
+              </div>
+
+
+
+              
+              <!-- ITEM -->
+              <div
+                class="d-flex align-items-center justify-content-between py-2 "
+              >
+                <div class="d-flex align-items-center gap-3">
+  
+  <div class="icon-box-contract  d-flex align-items-center justify-content-center custom-bordericon color-2">
+      <img src="Images/indrive.svg" alt="" />
+  </div>
+
+  <div>
+    <div class="fw-semibold small">Mcdoounls</div>
+    <div class="text-muted small">Contract ID:ABC12345</div>
+  </div>
+
+</div>
+
+                <span class="badge bg-primary bg-opacity-10 text-primary small">
+                  Review
+                </span>
+              </div>
+
+              <!-- ITEM -->
+              <div
+                class="d-flex align-items-center justify-content-between py-2 " >
+                 <div class="d-flex align-items-center gap-3">
+  
+  <div class="icon-box-contract d-flex align-items-center justify-content-center custom-bordericon color-3">
+      <img src="Images/Foodapnda.svg" alt="" />
+  </div>
+
+  <div>
+    <div class="fw-semibold small">Checkout</div>
+    <div class="text-muted small">Contract ID:ABC12345</div>
+  </div>
+
+</div>
+
+                <span class="badge bg-warning bg-opacity-10 text-warning small">
+                  Published
+                </span>
+              </div>
+              <!-- ITEM -->
+              <div
+                class="d-flex align-items-center justify-content-between py-2 "
+              >
+                
+                   <div class="d-flex align-items-center gap-2">
+  
+  <div class="icon-box-contract d-flex align-items-center justify-content-center  custom-bordericon color-4">
+      <img src="Images/Foodapnda.svg" alt="" />
+  </div>
+
+  <div>
+    <div class="fw-semibold small">Checkout</div>
+    <div class="text-muted small">Contract ID:ABC12345</div>
+  </div>
+
+</div>
+
+                <span class="badge bg-danger bg-opacity-10 text-danger small">
+                  Cancel Request
+                </span>
+              </div>
+
+              <!-- ITEM -->
+               <div>
+              <div
+                class="d-flex align-items-center justify-content-between py-2 "
+              >
+                <div class="d-flex align-items-center gap-3">
+  
+  <div class="icon-box-contract d-flex align-items-center justify-content-center custom-bordericon color-5">
+      <img src="Images/Foodapnda.svg" alt="" />
+  </div>
+
+  <div>
+    <div class="fw-semibold small">Checkout</div>
+    <div class="text-muted small">Contract ID:ABC12345</div>
+  </div>
+
+</div>
+
+                <span class="badge bg-warning bg-opacity-10 text-warning small ">
+                  Under Review
+                </span>
+              </div>
+
+
+              </div>
+
+              <!-- ITEM -->
+              
+
+              <!-- ITEM -->
+              <div
+                class="d-flex align-items-center justify-content-between py-2 "
+              >
+                <div class="d-flex align-items-center gap-3">
+  
+  <div class="icon-box-contract d-flex align-items-center justify-content-center custom-bordericon color-6">
+      <img src="Images/indrive.svg" alt="" />
+  </div>
+
+  <div>
+    <div class="fw-semibold small">Checkout</div>
+    <div class="text-muted small">Contract ID:ABC12345</div>
+  </div>
+
+</div>
+
+                <span class="badge bg-danger bg-opacity-10 text-danger small">
+                  Published
+                </span>
+              </div>
+
+              <!-- ITEM -->
+              <div
+                class="d-flex align-items-center justify-content-between py-2"
+              >
+               <div class="d-flex align-items-center gap-3">
+  
+  <div class="icon-box-contract bg-white d-flex align-items-center justify-content-center custom-bordericon color-7 ">
+      <img src="Images/Foodapnda.svg" alt="" />
+  </div>
+
+  <div>
+    <div class="fw-semibold small">Checkout</div>
+    <div class="text-muted small">Contract ID:ABC12345</div>
+  </div>
+
+</div>
+
+                 <span class="badge bg-success bg-opacity-10 text-success small">
+                  Published
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Table -->
+
+      <div  class=" area  mt-2 ">
+        <div class="card  rounded-4 border-0">
+          <div class="card-body">
+            <!-- TITLE -->
+            <h6 class="fw-bold mb-3">Detailed Campaign Stats</h6>
+
+            <!--  DESKTOP TABLE -->
+            <div class="overflow-x-auto">
+              <div class="table-responsive-xxl custom-table-wrapper">
+                <table id="dashboardTable"
+                  class="table table-hover  align-middle mb-0"
+                >
+                  <thead class="tablee no-border-top">
+                    <tr>
+                     <th><p class="table-heading mb-0">Days</p></th>
+<th><p class="table-heading mb-0">Total Sent</p></th>
+<th><p class="table-heading mb-0">Push Sent</p></th>
+<th><p class="table-heading mb-0">Web Sent</p></th>
+<th><p class="table-heading mb-0">Email sent</p></th>
+<th><p class="table-heading mb-0">Sms sent</p></th>
+<th><p class="table-heading mb-0">in App</p></th>
+<th><p class="table-heading mb-0">Delivery Rate</p></th>
+<th><p class="table-heading mb-0">open rate</p></th>
+<th><p class="table-heading mb-0">click Rate</p></th>
+<th><p class="table-heading mb-0">Views</p></th>
+<th><p class="table-heading mb-0">Conservison</p></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                     <td class="text-primary" style="font-weight:400; font-size:14px;">
+  Monday
+</td>
+                      <td>13,002</td>
+                      <td>2,500</td>
+                      <td>2,000</td>
+                      <td>1,500</td>
+                      <td>3,000</td>
+                      <td>3,000</td>
+                      <td>92%</td>
+                      <td>90%</td>
+                      <td>25%</td>
+                      <td>6,000</td>
+                      <td>300</td>
+                    </tr>
+
+                    <tr>
+                      <td class="text-primary" style="font-weight:400; font-size:14px;">Tuesday</td>
+                      <td>13,005</td>
+                      <td>2,500</td>
+                      <td>2,000</td>
+                      <td>1,545</td>
+                      <td>3,000</td>
+                      <td>3,000</td>
+                      <td>92%</td>
+                      <td>90%</td>
+                      <td>25%</td>
+                      <td>6,000</td>
+                      <td>300</td>
+                    </tr>
+
+                    <tr>
+                      <td class="text-primary"style="font-weight:400; font-size:14px;">Wednsday</td>
+                      <td>12,000</td>
+                      <td>2,500</td>
+                      <td>2,000</td>
+                      <td>1,500</td>
+                      <td>3,000</td>
+                      <td>3,000</td>
+                      <td>92%</td>
+                      <td>90%</td>
+                      <td>25%</td>
+                      <td>6,000</td>
+                      <td>300</td>
+                    </tr>
+
+                    <tr>
+                      <td class="text-primary" style="font-weight:400; font-size:14px;">Thursday </td>
+                      <td>13,005</td>
+                      <td>2,500</td>
+                      <td>2,000</td>
+                      <td>1,545</td>
+                      <td>3,000</td>
+                      <td>3,000</td>
+                      <td>92%</td>
+                      <td>90%</td>
+                      <td>70%</td>
+                      <td>6,000</td>
+                      <td>300</td>
+                    </tr>
+
+                    <tr>
+                      <td class="text-primary" style="font-weight:400; font-size:14px;">Friday</td>
+                      <td>13,001</td>
+                      <td>2,500</td>
+                      <td>2,000</td>
+                      <td>1,500</td>
+                      <td>3,000</td>
+                      <td>3,000</td>
+                      <td>92%</td>
+                      <td>90%</td>
+                      <td>25%</td>
+                      <td>6,000</td>
+                      <td>300</td>
+                    </tr>
+
+                    <tr>
+                      <td class="text-primary" style="font-weight:400; font-size:14px;">Saturday</td>
+                      <td>15,001</td>
+                      <td>2,500</td>
+                      <td>2,000</td>
+                      <td>1,500</td>
+                      <td>5,000</td>
+                      <td>3,000</td>
+                      <td>92%</td>
+                      <td>90%</td>
+                      <td>25%</td>
+                      <td>5,000</td>
+                      <td>300</td>
+                    </tr>
+
+                    <tr>
+                      <td class="text-primary" style="font-weight:400; font-size:14px;">Sunday</td>
+                      <td>12,000</td>
+                      <td>2,500</td>
+                      <td>2,000</td>
+                      <td>1,500</td>
+                      <td>3,000</td>
+                      <td>3,000</td>
+                      <td>92%</td>
+                      <td>90%</td>
+                      <td>25%</td>
+                      <td>6,600</td>
+                      <td>300</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- accordian-->
+
+      
+        
+          <div class="row align-items-start faq-areaaccordian">
+            <!-- LEFT: Illustration -->
+
+            <div
+              class="col-md-6 faq-img-wrap d-flex align-items-center justify-content-center  h-100 mb-4 mb-md-0 ps-custom"
+            >
+              <div class="illustration-placeholder position-relative">
+                <img
+                  src="Images/Person.svg"
+                  class="img-fluid w-100"
+                  alt="FAQ Image"
+                />
+              </div>
+            </div>
+
+            <!-- RIGHT: Accordion -->
+            <div class="col-md-6    ms-auto  ">
+              <p class="text-dark mb-1">Why Choose Us</p>
+
+              <h2 class="mb-4">
+                Frequently Asked Questions and Resources
+              </h2>
+
+              <div class="accordion" id="faqAccordion">
+                <!-- Item 1 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded-3">
+                  <h2 class="accordion-header" id="heading1">
+                    <button
+                      id="accBtn1"
+                      class="accordion-button collapsed shadow-sm ps-3 w-100 py-3 fs-5 rounded-3"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse1"
+                    >
+                   <h6 class="custom-titleaccordian">Who should use Alertify?</h6>
+
+                      <span class="ms-auto fw-bold text-dark fs-4 acc-icon">
+                        +
+                      </span>
+                    </button>
+                  </h2>
+
+                  <div
+                    id="collapse1"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body text-muted " style="background-color: #eafbf9;">
+                      Alertify is perfect for business owners, bloggers,
+                      ecommerce site owners, and basically anyone who runs a
+                      website. If you want to get more returning visitors, make
+                      more sales, boost conversions, and reduce cart
+                      abandonment, then you need Alertify.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded-3">
+                  <h2 class="accordion-header" id="heading2">
+                    <button
+                    id="accBtn2"
+                      class="accordion-button collapsed bg-transparent shadow-sm rounded-3 ps-3 w-100 py-3 fs-5 d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse2"
+                    >
+                  <h6 class="custom-titleaccordian">Whtas required to use Alertify?</h6>    
+
+                      <span class="ms-auto fw-bold text-dark fs-4 acc-icon">
+                        +
+                      </span>
+                    </button>
+                  </h2>
+                   <div
+                    id="collapse2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body text-muted " style="background-color: #eafbf9;">
+                      Alertify is perfect for business owners, bloggers,
+                      ecommerce site owners, and basically anyone who runs a
+                      website. If you want to get more returning visitors, make
+                      more sales, boost conversions, and reduce cart
+                      abandonment, then you need Alertify.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded-3">
+                  <h2 class="accordion-header" id="heading3">
+                    <button
+                    id="accBtn3"
+                      class="accordion-button collapsed bg-transparent shadow-sm rounded-3 ps-3 w-100 py-3 fs-5"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse3"
+                    >
+
+                    <h6 class="custom-titleaccordian">
+                      Will alertify slow down?</h6>
+
+                      <span class="ms-auto fw-bold text-dark fs-4 acc-icon">
+                        +
+                      </span>
+                    </button>
+                  </h2>
+
+
+                   <div
+                    id="collapse3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body  " style="background-color:  #eafbf9;">
+                    <p>  Alertify is perfect for business owners, bloggers,
+                      ecommerce site owners, and basically anyone who runs a
+                      website. If you want to get more returning visitors, make
+                      more sales, boost conversions, and reduce cart
+                      abandonment, then you need Alertify.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          </div>
+        </div>
+      
+
+
+
+    
+
+    
+
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  </body>
+</html>

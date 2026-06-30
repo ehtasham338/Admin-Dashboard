@@ -1,0 +1,866 @@
+
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashbaord</title>
+
+   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body >
+
+
+
+<!--Nvabar-->
+
+   <nav class="navbar bg-white border-0 px-3 px-md-4 fixed-top">
+  <div class="container-fluid px-0 d-flex align-items-center justify-content-between gap-2">
+
+   
+
+    <!-- CENTER: Heading + Breadcrumb -->
+    <div class="text-start flex-grow-1 overflow-hidden d-none d-sm-block">
+      <h4 class="fw-bold mb-1 fs-6 text-truncate">Push Notification</h4>
+      <div class="small text-secondary d-flex flex-wrap justify-content-start gap-1">
+        <span>Bright Wave Media</span>
+        <span>›</span>
+        <span>Shopease</span>
+        <span>›</span>
+        <span>Push Notification</span>
+        <span>›</span>
+        <a href="create.html" class="text-primary fw-semibold text-decoration-none">New Push</a>
+      </div>
+    </div>
+
+    <!-- Mobile: sirf heading (breadcrumb nahi) -->
+    <div class="text-center flex-grow-1 d-block d-sm-none overflow-hidden">
+      <span class="fw-bold small text-truncate d-block">Push Notification</span>
+    </div>
+
+    <!-- RIGHT: User -->
+    <div class="d-flex align-items-center gap-2 flex-shrink-0">
+      <!-- User text sirf sm+ pe dikhe -->
+      <div class="text-end d-none d-sm-block">
+        <div class="fw-medium small">Ehtasham</div>
+        <small class="text-muted" style="font-size:11px;">Admin</small>
+      </div>
+      <img
+        src="Images/navbaricon/Profile-icon.svg"
+        alt="Profile"
+        width="38"
+        height="38"
+        class="rounded"
+      />
+    </div>
+
+  </div>
+</nav>
+
+
+
+    <!--- SIDEBAR  -->
+    <div class="side " >
+    <nav
+      id="sidebar"
+      class="bg-dark text-white position-fixed bottom-0 top-0 overflow-scroll d-flex flex-column  rounded-3"
+    >
+      <!-- LOGO -->
+      <div class="d-flex align-items-center p-3 border-bottom border-secondary">
+        <div
+          class="bg-dark d-flex align-items-center justify-content-center rounded"
+           >
+          <img src="/Images/Logo.svg" width="22px" height="24px" />
+        </div>
+        <span class="ms-2 fw-semibold logo-text">Alertify</span>
+      </div>
+
+      <!-- APP LABEL -->
+      <div class="sidebar-app-label px-3 py-2 large text-white">
+        ShopEase App
+      </div>
+
+      <!-- MENU -->
+      <div>
+        <!-- DASHBOARD -->
+       <a href="index.html" class="d-flex align-items-center text-decoration-none px-3">
+    <img src="/Images/Dashboard-Icon.svg" width="40" height="40" />
+
+    <span class="nav-label">Dashboard</span>
+</a>
+
+        <!-- MESSAGES -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'messages-sub')"
+          >
+            <!-- <img src="/Images/Message-Icon.svg" width="50" height="50" class="me-2"> -->
+            <svg class="sidebar-icon" >
+              <use href="./Images/Message-Icon.svg#message-icon"></use>
+            </svg>
+
+            <span class="nav-label">Messages</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="messages-sub">
+            <li  class="active">
+              <a
+                class=" text-decoration-none active"
+                href="create.html">Push
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Web</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Email</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >SMS</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >in-App</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Template</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- AUDIENCE -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'audience-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Audinace-icon.svg#Audinace"></use>
+            </svg>
+
+            <span class="nav-label">Audience</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="audience-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Segments</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Subscrption</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Test Subscrptions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- DELIVERY -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'delivery-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Delivery-icon.svg#Delivery"></use>
+            </svg>
+
+            <span class="nav-label">Delivery</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="delivery-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Scheduled Message</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Sent meassage</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'settings-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Setting-icon.svg#Setting-icon"></use>
+            </svg>
+
+            <span class="nav-label">Settings</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="settings-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Platforms</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Role $ permission</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >User</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <!-- BOTTOM -->
+
+      <div class="border-top border-secondary p-2 mt-auto ">
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-2 py-2"
+            onclick="toggleMenu(event, 'organization-sub')"
+          >
+            <img class="sidebar-icon"
+              src="/Images/Oragnizatio-icon.svg"
+              
+              
+            />
+
+            <span class="nav-label">Organizations</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="organization-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >All Organization</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Media</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Social Media</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Partners</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-2 py-2"
+            onclick="toggleMenu(event, 'apps-sub')"
+          >
+            <img class="sidebar-icon"
+              src="/Images/NaApps-icon.svg"
+              
+              
+            />
+
+            <span class="nav-label">Apps</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="apps-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >TikTok</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Facebook</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    </div>
+
+
+
+
+
+
+
+
+  <div class="page-wrapper2 "id="pushForm">
+
+    <div class="main-content2">
+
+
+
+
+
+
+
+
+
+  <!-- TOP ROW -->
+  <div class="top-row row g-0 bg-">
+
+    <!-- General Details -->
+    <div class="col-md-6 top-panel bg-white">
+      <div class="section-title">General Details</div>
+      <div class="mb-3">
+      <label class="d-flex align-items-center justify-content-between">
+  <span>Message Name</span>
+
+  <span class="info-icon text-warning ms-2 fs-7">
+    &#9432;
+  </span>
+</label>
+        <input type="text" class="form-control bg-light border-0" placeholder="Campaign name or internal name"/>
+      </div>
+      <div class="mb-3">
+        <label>Select a label or add new Label</label>
+        <select class="form-select bg-light border-0">
+          <option value="" disabled selected>Please Select</option>
+          <option>Label 1</option>
+          <option>Label 2</option>
+        </select>
+        <div class="mt-2">
+          <span class="badge-tag">Active Users <span class="remove-btn">&#x2715;</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audience -->
+    <div class="col-md-6 top-panel bg-white">
+  <div class="section-title">Audience</div>
+
+  <div class="mb-3 d-flex gap-4">
+    <label class="radio-label">
+      <input
+        type="radio"
+        name="sendTo"
+        value="total"
+        checked
+        onclick="toggleAudience()"
+      />
+      Send to Total Subscriptions
+    </label>
+
+    <label class="radio-label">
+      <input
+        type="radio"
+        name="sendTo"
+        value="segment"
+        onclick="toggleAudience()"
+      />
+      Send to Particular Segment(s)
+    </label>
+  </div>
+
+  <!-- Hidden by default -->
+  <div id="segmentSection" style="display:none;">
+
+    <div class="mb-3">
+      <label>What segment(s) should receive this message?</label>
+
+      <select class="form-select mb-2 bg-light border-0">
+        <option value="" disabled selected>Please Select</option>
+        <option>Active Users</option>
+        <option>New Users</option>
+      </select>
+
+      <div>
+        <span class="badge-tag">
+          Active Users
+          <span class="remove-btn">&#x2715;</span>
+        </span>
+
+        <span class="badge-tag">
+          Active Subscribed
+          <span class="remove-btn">&#x2715;</span>
+        </span>
+
+        <span class="badge-tag">
+          New Subscribers
+          <span class="remove-btn">&#x2715;</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="mb-2">
+      <label>What segment(s) should not receive this message?</label>
+
+      <select class="form-select bg-light border-0">
+        <option value="" disabled selected>Please Select</option>
+        <option>Inactive Users</option>
+        <option>Blocked Users</option>
+      </select>
+    </div>
+
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- BOTTOM ROW -->
+
+  <div class="bottom-wrapper bg-white rounded-3 overflow-hidden mt-4">
+  <div class="bottom-row row g-0">
+
+    <!-- Message Panel -->
+    <div class="col-md-6 bottom-panel">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="section-title mb-0">Message</div>
+       
+      </div>
+
+      <div class="mb-3">
+        <label>Title</label>
+        <input type="text" class="form-control bg-light border-0" placeholder="Please enter"/>
+      </div>
+      <div class="mb-3">
+        <label>Message</label>
+        <textarea class="form-control bg-light border-0" rows="3" placeholder="Thanks for subscribing..."></textarea>
+      </div>
+     
+
+<div class="mb-3">
+    <label class="form-label">Banner Image</label>
+
+    <div class="d-flex align-items-center gap-3">
+
+        <!-- Hidden File Input -->
+        <input type="file" id="bannerFile" hidden>
+
+        <!-- Choose File Button -->
+        <label for="bannerFile" class="input-group-text file-btn bg-light">
+            Choose File
+        </label>
+
+        <!-- File Name -->
+        <input
+            type="text"
+            id="fileName"
+            class="form-control file-input border-0 flex-grow-1"
+            placeholder="No file selected"
+            readonly>
+
+    </div>
+</div>
+
+      <div class="mb-3 border-0">
+        <label>Launch URL</label>
+        <input type="text" class="form-control bg-light border-0" value="https://bitly/obo"/>
+      </div>
+      <div class="mb-3 d-flex align-items-center gap-2">
+        <div class="form-check form-switch mb-0">
+          <input class="form-check-input border-0" type="checkbox" id="sendEdge" checked/>
+          <label class="form-check-label" for="sendEdge" style="font-size:12px;color:#555;">Send to Edge</label>
+        </div>
+      </div>
+
+      <hr class="divider"/>
+
+      <div class="mb-3">
+        <button class="advanced-toggle" data-bs-toggle="collapse" data-bs-target="#advancedSettings">
+           Advanced Settings
+        </button>
+        <div class="collapse show" id="advancedSettings">
+          <div class="mt-3">
+            <div class="mb-3">
+
+
+              <label class="d-flex align-items-center">Collapse ID
+  <span class="info-icon text-warning ms-auto fs-7">
+    &#9432;
+  </span>
+</label>
+              <input type="text" class="form-control bg-light border-0" placeholder="Please enter"/>
+            </div>
+            <div class="mb-3">
+
+          <label class="d-flex align-items-center">
+  Web Push Topic
+  <span class="info-icon text-warning ms-auto fs-7">
+    &#9432;
+  </span>
+</label>
+              <input type="text" class="form-control bg-light border-0" placeholder="Please enter"/>
+            </div>
+
+
+
+
+
+
+
+            
+
+
+       <div class="mb-3">
+
+  <div class="d-flex align-items-center justify-content-between priority-group">
+
+    <!-- Left side: label -->
+    <div class="d-flex align-items-center gap-2">
+      <label class="mb-0">Priority</label>
+    </div>
+
+    <!-- Middle options -->
+    <div class="d-flex align-items-center gap-4">
+
+      <label class="radio-label">
+        <input type="radio" class="priority-radio" name="priority" value="normal" checked />
+        Normal
+      </label>
+
+      <label class="radio-label">
+        <input type="radio" class="priority-radio" name="priority" value="high" />
+        High
+      </label>
+
+    </div>
+
+    <!-- Right side icon -->
+    <span class="info-icon text-warning fs-7">&#9432;</span>
+
+  </div>
+
+</div>
+
+
+
+
+            <div class="mb-2">
+
+ <label class="d-flex align-items-center w-100">
+  Priority
+  <span class="info-icon text-dark fs-7 ms-auto">
+    &#9432;
+  </span>
+</label>
+
+  <div class="time-to-use d-flex align-items-center mt-1">
+
+    <button class="add-btn border-0 bg-light rounded-3">+</button>
+
+    <input type="number" class="form-control time-input border-0 bg-light rounded-3" value="4" min="0"/>
+
+    <button class="minus-btn border-0 bg-light">−</button>
+
+    <select class="form-select time-select border-0 bg-light rounded-3">
+      <option>Days</option>
+      <option>Hours</option>
+      <option>Minutes</option>
+    </select>
+
+  </div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview Panel -->
+    <div class="col-md-6 bottom-panel d-flex flex-column ">
+
+  <div class="d-flex flex-wrap justify-content-end gap-2 mb-3">
+
+    <button class="btn ab-test-btn btn-sm rounded-2 border-0 d-flex align-items-center gap-2">
+
+        <img src="./Images/buttonicon/buttonicon.svg"
+             alt="A/B Test"
+             width="16"
+             height="16">
+
+        <span>A/B Test</span>
+
+    </button>
+
+    <button class="btn btn-primary btn-sm rounded-2 border-0 d-flex align-items-center gap-2">
+
+        <img src="./Images/buttonicon/Vector.svg"
+             alt="Send"
+             width="16"
+             height="16">
+
+        <span>Send Test Push</span>
+
+    </button>
+
+</div>
+
+  <div class="preview-area mb-3">
+    <div class="p-3 d-flex flex-column align-items-center">
+
+      <div
+        class="w-100 d-flex flex-column align-items-center"
+        style="max-width: 280px"
+      >
+
+        <!-- Banner Preview -->
+        <div class="imgcard rounded-2 shadow">
+    <img
+        src="/Images/Images.svg"
+        class="img-fluid w-100 h-100"
+        alt="banner">
+</div>
+
+
+        <!-- Chrome Notification -->
+        <!-- Chrome Notification -->
+<div class="bg-white rounded-3 shadow p-3 w-100">
+
+  <!-- Header -->
+  <div class="d-flex align-items-center gap-2 mb-2">
+
+    <img
+      src="/Images/google chrome.svg"
+      class="flex-shrink-0"
+      style="width:16px;height:16px"
+      alt=""
+    >
+
+    <span class="text-secondary small flex-grow-1 text-truncate">
+      Google Chrome
+    </span>
+
+    <span class="text-secondary small flex-shrink-0">✕</span>
+
+  </div>
+
+  <!-- Notification Body -->
+  <div class="d-flex align-items-start gap-2">
+
+    <!-- Icon -->
+    <div class="icon-box d-flex align-items-center justify-content-center flex-shrink-0 rounded-2">
+
+      <img
+        src="/Images/alert-logo.svg"
+        class="img-fluid"
+        alt=""
+      >
+
+    </div>
+
+    <!-- Text -->
+    <div class="flex-grow-1 notification-content">
+
+      <div class="fw-bold small text-break">
+        Push Notification Title Goes here
+      </div>
+
+      <div class="text-secondary small lh-sm mt-1 text-break">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </div>
+
+      <div class="text-primary small mt-1 text-break">
+        www.example.com
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Buttons -->
+  <div class="d-flex flex-wrap gap-2 mt-3">
+
+    <button class="btn btn-primary btn-sm flex-fill">
+      Save
+    </button>
+
+    <button class="btn btn-light btn-sm flex-fill">
+      Cancel
+    </button>
+
+  </div>
+
+</div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+<div class="preview-label">
+    Previewing Welcome Notification
+  </div>
+
+
+ <div class="d-flex justify-content-center">
+
+    <div class="btn-group os-tabs" role="group">
+
+        <button type="button" class="btn os-btn active">
+            <img src="./Images/formpagesicon/window-icon.svg" width="14" height="18" class="me-1">
+            <span>Windows</span>
+        </button>
+
+        <button type="button" class="btn os-btn">
+            <img src="./Images/formpagesicon/Andriod-icon.svg" width="14" height="18" class="me-1">
+            <span>Android</span>
+        </button>
+
+        <button type="button" class="btn os-btn">
+            <img src="./Images/formpagesicon/ios.svg" width="14" height="18" class="me-1">
+            <span>iOS</span>
+        </button>
+
+        <button type="button" class="btn os-btn">
+            <img src="./Images/formpagesicon/mac (2).svg" width="14" height="18" class="me-1">
+            <span>macOS</span>
+        </button>
+
+    </div>
+
+</div>
+  
+
+  </div>
+
+  
+
+</div>
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+  <!-- FOOTER -->
+   
+  <div class="footer-bar bg-white position-fixed bottom-0 custom-footer">
+
+    <div class="container-fluid px-4">
+
+        <div class="d-flex justify-content-end flex-wrap gap-2">
+
+            <button class="btn btn-light">
+                Cancel
+            </button>
+
+            <button class="btn btn-primary">
+                Send Now
+            </button>
+
+            <input type="checkbox" id="draftToggle" hidden>
+
+            <label
+                for="draftToggle"
+                class="btn bg-primary bg-opacity-10 text-primary border draft-btn">
+
+                Save to Drafts
+
+            </label>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+  
+
+  <!-- BOTTOM BAR -->
+  
+
+
+
+
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  </body>
+</html>
+
+   

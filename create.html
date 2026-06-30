@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Create Push</title> 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+
+  <!-- Bootstrap Icons (for search, pencil, trash icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+
+
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="/assets/css/admin.css"/>
+  
+  
+</head>
+
+<body> 
+
+<!--Nvabar-->
+<nav class="navbar bg-white border-0 px-3 px-md-4 fixed-top">
+  <div class="container-fluid px-0 d-flex align-items-center justify-content-between gap-2">
+
+   
+
+    <!-- CENTER: Heading + Breadcrumb -->
+    <div class="text-start flex-grow-1 overflow-hidden d-none d-sm-block">
+      <h4 class="fw-bold mb-1 fs-6 text-truncate">Push Notification</h4>
+      <div class="small text-secondary d-flex flex-wrap justify-content-start gap-1">
+        <span>Bright Wave Media</span>
+        <span>›</span>
+        
+        <span>›</span>
+        <span>Push Notification</span>
+        <span>›</span>
+        <a href="create.html" class="text-primary fw-semibold text-decoration-none">New Push</a>
+      </div>
+    </div>
+
+    <!-- Mobile: sirf heading (breadcrumb nahi) -->
+    <div class="text-center flex-grow-1 d-block d-sm-none overflow-hidden">
+      <span class="fw-bold small text-truncate d-block">Push Notification</span>
+    </div>
+
+    <!-- RIGHT: User -->
+    <div class="d-flex align-items-center gap-2 flex-shrink-0">
+      <!-- User text sirf sm+ pe dikhe -->
+      <div class="text-end d-none d-sm-block">
+        <div class="fw-medium small">Ehtasham</div>
+        <small class="text-muted" style="font-size:11px;">Admin</small>
+      </div>
+      <img
+        src="Images/navbaricon/Profile-icon.svg"
+        alt="Profile"
+        width="38"
+        height="38"
+        class="rounded"
+      />
+    </div>
+
+  </div>
+</nav>
+
+
+    <!--- SIDEBAR  -->
+    <div class="side " >
+    <nav
+      id="sidebar"
+      class="bg-dark text-white position-fixed bottom-0 top-0 overflow-scroll d-flex flex-column  rounded-3"
+    >
+      <!-- LOGO -->
+      <div class="d-flex align-items-center p-3 border-bottom border-secondary">
+        <div
+          class="bg-dark d-flex align-items-center justify-content-center rounded"
+           >
+          <img src="/Images/Logo.svg" width="22px" height="24px" />
+        </div>
+        <span class="ms-2 fw-semibold logo-text">Alertify</span>
+      </div>
+
+      <!-- APP LABEL -->
+      <div class="sidebar-app-label px-3 py-2 large text-white">
+        ShopEase App
+      </div>
+
+      <!-- MENU -->
+      <div>
+        <!-- DASHBOARD -->
+       <a href="index.html" class="d-flex align-items-center text-decoration-none px-3">
+    <img src="/Images/Dashboard-Icon.svg" width="40" height="40" />
+
+    <span class="nav-label">Dashboard</span>
+</a>
+
+        <!-- MESSAGES -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'messages-sub')"
+          >
+            <!-- <img src="/Images/Message-Icon.svg" width="50" height="50" class="me-2"> -->
+            <svg class="sidebar-icon" >
+              <use href="./Images/Message-Icon.svg#message-icon"></use>
+            </svg>
+
+            <span class="nav-label">Messages</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="messages-sub">
+            <li  class="active">
+              <a
+                class=" text-decoration-none active"
+                href="create.html">Push
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Web</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Email</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >SMS</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >in-App</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Template</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- AUDIENCE -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'audience-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Audinace-icon.svg#Audinace"></use>
+            </svg>
+
+            <span class="nav-label">Audience</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="audience-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Segments</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Subscrption</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Test Subscrptions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- DELIVERY -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'delivery-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Delivery-icon.svg#Delivery"></use>
+            </svg>
+
+            <span class="nav-label">Delivery</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="delivery-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Scheduled Message</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Sent meassage</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-3 py-2"
+            onclick="toggleMenu(event, 'settings-sub')"
+          >
+            <svg class="sidebar-icon">
+              <use href="./Images/Setting-icon.svg#Setting-icon"></use>
+            </svg>
+
+            <span class="nav-label">Settings</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="settings-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Platforms</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Role $ permission</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >User</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <!-- BOTTOM -->
+
+      <div class="border-top border-secondary p-2 mt-auto ">
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-2 py-2"
+            onclick="toggleMenu(event, 'organization-sub')"
+          >
+            <img class="sidebar-icon"
+              src="/Images/Oragnizatio-icon.svg"
+              
+              
+            />
+
+            <span class="nav-label">Organizations</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="organization-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >All Organization</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Media</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Social Media</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Partners</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-item-wrap">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none px-2 py-2"
+            onclick="toggleMenu(event, 'apps-sub')"
+          >
+            <img class="sidebar-icon"
+              src="/Images/NaApps-icon.svg"
+              
+              
+            />
+
+            <span class="nav-label">Apps</span>
+
+            <i class="fas fa-plus ms-auto nav-plus"></i>
+          </a>
+
+          <ul class="sub-menu" id="apps-sub">
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >TikTok</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none active" href="#"
+                >Facebook</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    </div>
+
+
+
+<div class="wrapper2  bg-white   card  border-0 rounded-3"> 
+
+ <div class="cont ">
+
+
+ 
+    
+    <!-- Tabs + Toolbar -->
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+
+  <ul class="nav nav-pills mb-3 row g-2" id="pills-tab" role="tablist">
+    <li class="nav-item col-6 col-md-auto" role="presentation">
+      <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all" type="button">All</button>
+    </li>
+    <li class="nav-item col-6 col-md-auto" role="presentation">
+      <button class="nav-link" data-bs-toggle="pill" data-bs-target="#sent" type="button">
+        Sent <span class="badge bg-success rounded-pill ms-1">99+</span>
+      </button>
+    </li>
+    <li class="nav-item col-6 col-md-auto" role="presentation">
+      <button class="nav-link" data-bs-toggle="pill" data-bs-target="#scheduled" type="button">Scheduled</button>
+    </li>
+    <li class="nav-item col-6 col-md-auto" role="presentation">
+      <button class="nav-link" data-bs-toggle="pill" data-bs-target="#drafts" type="button">Drafts</button>
+    </li>
+    <li class="nav-item col-6 col-md-auto" role="presentation">
+      <button class="nav-link" data-bs-toggle="pill" data-bs-target="#abtest" type="button">A/B Test</button>
+    </li>
+  </ul>
+
+  <div class="row g-2 align-items-center">
+
+  <!-- Search Box -->
+ <div class="col-12 col-lg">
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      name="search_12345"
+      placeholder="Search here..."
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false">
+    <i class="bi bi-search search-icon"></i>
+  </div>
+</div>
+
+  <!-- New Push Button -->
+  <div class="col-12 col-md-6 col-lg-auto">
+    <button class="btn btn-primary custom-btnform w-100"
+            onclick="window.location.href='form.html'">
+      <i class="bi bi-plus-lg me-1"></i>
+      New Push
+    </button>
+  </div>
+
+  <!-- Add User Button -->
+  <div class="col-12 col-md-6 col-lg-auto">
+    <button class="btn btn-outline-primary custom-btnform w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#addUserModal">
+      <i class="bi bi-person-plus me-1"></i>
+      Add New User
+    </button>
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="tab-content" id="pills-tabContent">
+
+  <!-- ALL tab — show active dono lagate hain -->
+  <div class="tab-pane fade show active" id="all" role="tabpanel">
+    <div class="table-responsive custom-table-wrapper">
+      <table class="table align-middle">
+        <thead class="table-white custom-theadcreate">
+          <tr>
+            <th>#</th>
+            <th class="text-start">Name</th>
+            <th>Label</th>
+            <th>Status</th>
+            <th>Sent at</th>
+            <th>Created at</th>
+            <th>Sent</th>
+            <th>Opened</th>
+            <th>Clicked</th>
+            <th>CTR</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1 -->
+          <tr>
+            <td class="text-muted table-number">01</td>
+            <td class="text-primary text-start">New Feature Announcement</td>
+            <td><span class="badge bg-dark-subtle text-muted">Update</span></td>
+            <td><span class="badge bg-success-subtle text-success">Sent</span></td>
+            <td>08/28/24, 4:21 am</td>
+            <td>08/28/24, 4:21 am</td>
+            <td>150</td><td>150</td><td>150</td><td>10%</td>
+            <td>
+              <div class="d-flex align-items-center flex-nowrap">
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-copy"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-light btn-sm icon-btn delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- Row 2 -->
+          <tr>
+            <td class="text-muted table-number">02</td>
+            <td class="text-primary text-start">Price Drop Alert</td>
+            <td><span class="badge bg-dark-subtle text-muted">Promotional</span></td>
+            <td><span class="badge bg-secondary-subtle text-secondary">Draft</span></td>
+            <td>-</td>
+            <td>08/28/24, 4:21 am</td>
+            <td>-</td><td>-</td><td>-</td><td>-</td>
+            <td>
+              <div class="d-flex align-items-center flex-nowrap">
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-copy"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-light btn-sm icon-btn delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- Row 3 -->
+          <tr>
+            <td class="text-muted table-number">03</td>
+            <td class="text-primary text-start">End of Season Sale</td>
+            <td><span class="badge bg-dark-subtle text-muted">Feedback</span></td>
+            <td><span class="badge bg-success-subtle text-success">Sent</span></td>
+            <td>08/28/24, 4:21 am</td>
+            <td>08/28/24, 4:21 am</td>
+            <td>150</td><td>150</td><td>150</td><td>100%</td>
+            <td>
+              <div class="d-flex align-items-center flex-nowrap">
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-copy"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-light btn-sm icon-btn delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- Row 4 -->
+          <tr>
+            <td class="text-muted table-number">04</td>
+            <td class="text-primary text-start">User Action Required</td>
+            <td><span class="badge bg-dark-subtle text-muted">Actionable</span></td>
+            <td><span class="badge bg-warning-subtle text-warning">Scheduled</span></td>
+            <td>08/28/24, 4:21 am</td>
+            <td>08/28/24, 4:21 am</td>
+            <td>150</td><td>150</td><td>150</td><td>100%</td>
+            <td>
+              <div class="d-flex align-items-center flex-nowrap">
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-copy"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-light btn-sm icon-btn delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- Row 5 -->
+          <tr>
+            <td class="text-muted table-number">05</td>
+            <td class="text-primary text-start">Price Drop Alert</td>
+            <td><span class="badge bg-dark-subtle text-muted">Promotional</span></td>
+            <td><span class="badge bg-primary-subtle text-primary">A/B Test</span></td>
+            <td>-</td>
+            <td>08/28/24, 4:21 am</td>
+            <td>-</td><td>-</td><td>-</td><td>-</td>
+            <td>
+              <div class="d-flex align-items-center flex-nowrap">
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-copy"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-light btn-sm icon-btn"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-light btn-sm icon-btn delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+  <div class="tab-pane fade" id="sent" role="tabpanel">
+    <p>This is Sent tab content</p>
+  </div>
+
+  
+  <div class="tab-pane fade" id="scheduled" role="tabpanel">
+    <p>This is Scheduled tab content</p>
+  </div>
+
+  
+  <div class="tab-pane fade" id="drafts" role="tabpanel">
+    <p>This is Drafts content</p>
+  </div>
+
+ 
+  <div class="tab-pane fade" id="abtest" role="tabpanel">
+    <p>This is A/B Test content</p>
+  </div>
+
+</div>
+
+
+    
+
+
+
+    <!-- PAGINATION -->
+    <div class="d-flex justify-content-end align-items-center mt-3">
+
+      
+ 
+
+  <nav>
+    <ul class="pagination pagination-sm mb-0">
+
+      <!-- NEXT -->
+      <li class="page-item">
+        <a class="page-link text-dark border-0 bg-transparent" href="#">
+          Next <i class="bi bi-chevron-right"></i>
+        </a>
+      </li>
+
+      <li class="page-item ">
+        <a class="page-link  " href="#">1</a>
+      </li>
+
+      <li class="page-item"><a class="page-link text-dark border-0 bg-transparent" href="#">2</a></li>
+      <li class="page-item"><a class="page-link text-dark border-0 bg-transparent" href="#">3</a></li>
+      <li class="page-item"><a class="page-link text-dark border-0 bg-transparent" href="#">4</a></li>
+      <li class="page-item"><a class="page-link text-dark border-0 bg-transparent" href="#">5</a></li>
+
+      <!-- PREVIOUS -->
+      <li class="page-item">
+        <a class="page-link text-secondary border-0 bg-transparent" href="#">
+          <i class="bi bi-chevron-left"></i> Previous
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+</div>
+  </div>
+ </div> 
+
+
+ </div>
+
+
+
+
+
+
+ <!-- modal code -->
+ 
+ 
+<div class="modal fade" id="addUserModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content rounded-3">
+
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Add New User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+
+        <!-- Profile -->
+        <div class="mb-3 text-center">
+          <label class="form-label d-block rounded-0">Profile Image</label>
+
+          <div class="position-relative d-inline-block">
+
+            <div class="border border-dashed rounded bg-light d-flex align-items-center justify-content-center"
+                 style="width:90px;height:90px;">
+              <i class="bi bi-person fs-1 text-secondary"></i>
+            </div>
+
+          
+            
+
+<!-- remove -->
+<button class="btn btn-danger btn-sm rounded-circle p-0 d-flex align-items-center justify-content-center position-absolute close-danger-btn"
+        style="width:18px;height:18px; top:-6px; right:-8px;">
+  <img src="Images/Modal-icon/cross iocn.svg" alt="remove" />
+</button>
+
+<!-- upload -->
+<button class="btn btn-sm btn-primary rounded-circle position-absolute camera-btn"
+        style="width:18px;height:18px; padding:0; bottom:-8px; right:-6px;">
+  <img src="Images/Modal-icon/profile-ucameraicon.svg" alt="upload" />
+</button>
+
+
+
+          </div>
+          
+        </div>
+
+        <!-- Name -->
+        <div class="mb-3">
+          <label class="form-label">Full Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control rounded-3 border-0 bg-light" placeholder="Please enter">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">Email Address <span class="text-danger">*</span></label>
+          <input type="email" class="form-control rounded-3 border-0 bg-light" placeholder="Please enter">
+        </div>
+
+        <!-- Role -->
+        <div class="mb-3">
+          <label class="form-label ">Select Role</label>
+          <select class="form-select rounded-3 border-0 bg-light">
+            <option selected disabled>Please select</option>
+            <option>Admin</option>
+            <option>Editor</option>
+            <option>Viewer</option>
+          </select>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label">Create Login Password</label>
+
+          <div class="input-group">
+            <input type="password" id="pwdField" class="form-control rounded-3 border-0 bg-light" placeholder="Please enter">
+
+            <button class="btn btn-outline-secondary rounded-3 border-0 bg-light"
+                    type="button"
+                    onclick="togglePassword()">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary rounded-3 border-0" data-bs-dismiss="modal">
+          Cancel
+        </button>
+
+        <button class="btn btn-primary">
+          Update Profile
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content delete-modal-content">
+
+      <div class="modal-body text-center p-4">
+
+        <!-- Close icon -->
+        <button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+        <!-- Warning Icon -->
+        <div class="warning-icon-wrapper mx-auto mb-3">
+          <i class="bi bi-exclamation-triangle"></i>
+        </div>
+
+        <!-- Title -->
+        <h5 class="fw-bold mb-2">Confirm Deletion...!</h5>
+
+        <!-- Description -->
+        <p class="text-muted mb-4">
+          Are you sure you want to delete this item? This action cannot be undone.
+        </p>
+
+        <!-- Buttons -->
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-cancel-modal w-50" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-delete-modal w-50" id="confirmDeleteBtn">
+            <i class="bi bi-trash me-1"></i> Delete
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+  
+
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
